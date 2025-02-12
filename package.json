@@ -103,16 +103,6 @@
       "type": "git",
       "url": "git+https://github.com/DylanVann/react-native-fast-image.git"
     },
-    "scripts": {
-      "build": "exit 0",
-      "commit": "git-cz",
-      "format": "yarn prettier --write",
-      "lint": "eslint src/**/*.js react-native-fast-image-example/src/**/*.js",
-      "prepare": "git submodule update --init --recursive",
-      "prettier": "prettier './**/*.{js,d.ts,js.flow,yml}'",
-      "semantic-release": "semantic-release",
-      "test": "jest ./src/*.js"
-    },
     "types": "src/index.d.ts",
     "version": "6.1.1"
   }
