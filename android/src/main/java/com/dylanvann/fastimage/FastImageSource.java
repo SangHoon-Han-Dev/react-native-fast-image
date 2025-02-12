@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.Headers;
 import com.facebook.react.views.imagehelper.ImageSource;
@@ -103,10 +104,16 @@ public class FastImageSource extends ImageSource {
     }
 
     public Headers getHeaders() {
-        return mHeaders;
+        if(mHeaders != null)
+            return mHeaders;
+        return null;
     }
 
     public GlideUrl getGlideUrl() {
-        return new GlideUrl(getUri().toString(), getHeaders());
+        if(getUri().toString() != null && !getUri().toString().equals("")) {
+            return new GlideUrl(getUri().toString(), getHeaders());
+        }else {
+            return new GlideUrl("https://", getHeaders());
+        }
     }
 }
